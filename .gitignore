@@ -1,2 +1,15 @@
-.DS_Store
-.ipynb_checkpoints
+# .gitignore
+.gitignore
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Mac hidden folder organization files
+*.DS_Store
+
+# Python script caches
+__pycache__/
+
+# Secrets file (important if working with API keys or other sensitive information)
+*secrets.json
