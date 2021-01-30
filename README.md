@@ -11,17 +11,23 @@ Scrape data with the PushShift API off of two subreddits of your choice and buil
 
 ## DATA
 
-
-
-
+[Marvel Scraped Data](https://git.generalassemb.ly/sampeou/project_3/blob/master/data/marvel_reddit.csv "Marvel Scraped Data")
+[Marvel Studios Scraped Data](https://git.generalassemb.ly/sampeou/project_3/blob/master/data/marvelstudios_reddit.csv "Marvel Studios Scraped Data")
 
 
 ## Column Dictionary
 
-
-
-
-
+|Feature|Type|Dataset|Description|
+|---|---|---|---|
+|title|object|marvel/marvelstudios|Headline of the post from the document.|
+|selftext|object|marvel/marvelstudios|The body of the post.|
+|subreddit|object|marvel/marvelstudios|From which subreddit the document came from.|
+|created_utc|int|marvel/marvelstudios|Timestamp of post creation in UTC-Code|
+|author|object|marvel/marvelstudios|User that posted the document.|
+|num_comments|object|marvel/marvelstudios|Number of comments the post received.|
+|score|int|marvel/marvelstudios|How many likes on the post.|
+|is_self|boolean|marvel/marvelstudios|Whether posted by the user.|
+|timestamp|DateTime|marvel/marvelstudios|The date post was created.|
 
 
 ## Research:
@@ -31,4 +37,4 @@ After scraping from Reddit in 7 day windows for 10 years, I was able to scrape 3
 
 ## Conclusion and Recommendations:
 
-Currently a more tuned SVC model is still running almost 18 hours after starting it! If what you were looking for was a quick training model that you can tune based on a probability formula within a short deadline, the Naive Bayes model is your model. If you have hours, and I mean hours, to spare then Support Vector is the better performing model of the two.
+Between the two models, TfdifVectorizer ran with a Logistic Regression improves the accuracy scores on test data with a slight bit of overfitting on train data. The CountVectorizer ran with Naive Bayes runs very similarly across test and training data but is less accurate. TfdifVectorizer ran with Logistic Regression would be the model of choice with significantly low runtime.
